@@ -75,7 +75,7 @@ public class Main {
                     String theshit = "{\"content\": \"" + message + "\"}";
                     String response = "fuck you kas";
 
-                    URL obj = new URL(review);
+                    URL obj = new URL(webhook);
                     HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 
                     conn.setRequestMethod("POST");
