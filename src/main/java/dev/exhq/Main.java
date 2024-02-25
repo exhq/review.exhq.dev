@@ -75,7 +75,7 @@ public class Main {
                     String theshit = "{\"content\": \"" + message + "\"}";
                     String response = "fuck you kas";
 
-                    URL obj = new URL("https://discord.com/api/webhooks/1142164097446727731/X-L0oYH21clHV0m4uJ_tnGM6i2a_uedjVoO9DtWQ8_msHJGmWeKm0IqaaBBclFYfyEKk");
+                    URL obj = new URL(review);
                     HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 
                     conn.setRequestMethod("POST");
