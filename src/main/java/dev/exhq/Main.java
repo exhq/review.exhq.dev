@@ -32,9 +32,11 @@ public class Main {
                 "timestamp TEXT NOT NULL," +
                 "accepted BOOL DEFAULT FALSE)").execute();
         var app = Javalin.create(javalinConfig -> {
-            javalinConfig.bundledPlugins.enableCors(corsPluginConfig -> {
-                corsPluginConfig.addRule(CorsPluginConfig.CorsRule::anyHost);
-            });
+                    javalinConfig.bundledPlugins.enableCors(cors -> {
+                        cors.addRule(it -> {
+                            it.anyHost();
+                        });
+                    });
             javalinConfig.jsonMapper(GsonMapper.createGsonMapper());
                 })
                 .post("/sendreview", ctx -> {
