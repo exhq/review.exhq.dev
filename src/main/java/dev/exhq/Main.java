@@ -106,7 +106,12 @@ public class Main {
                         ctx.result("no");
                         return;
                     }
-                    if (!DiscordAuth.ValidateAuthorization(token).user().id().equals("712639419785412668")){
+                    var apparentlyMe = DiscordAuth.ValidateAuthorization(token);
+                    if (apparentlyMe == null){
+                        ctx.result("wtf bro");
+                        return;
+                    }
+                    if (!apparentlyMe.user().id().equals("712639419785412668")){
                         ctx.result("no");
                         return;
                     }
